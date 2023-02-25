@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <title>Weather App</title>
+
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Seymour+One&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="weather-app">
+      <div class="container">
+        <h1>Sunday</h1>
+        <h2>January 8, 15:00</h2>
+
+        <div class="row">
+          <div class="col-6">
+            <form id="search-form">
+              <div class="input-group mb-3">
+                <input
+                  type="text"
+                  class="form-control"
+                  id="enter-city-input"
+                  placeholder="Enter you city..."
+                  aria-label="Enter you city..."
+                  aria-describedby="basic-addon2"
+                />
+
+                <input type="submit" id="submit-button" value="Change city" />
+                <button id="location-button">Your location</button>
+              </div>
+            </form>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-2">
+            <img
+              id="current-weather-icon"
+              src="weather-icons/cloudy-1-day.svg"
+              alt="clear"
+              class="w-100 p-3"
+            />
+            <div id="description">Clear Sky</div>
+          </div>
+          <div class="col-4">
+            <div class="current-city"></div>
+            <div class="current-temp">
+              <strong id="current-degree"></strong>
+              <span class="units">
+                <a href="#" id="celsius-link" class="active">°C</a> |
+                <a href="#" id="fahrenheit-link">°F</a>
+              </span>
+            </div>
+          </div>
+
+          <div class="col-3">
+            <div class="additional-weather-data">
+              <div class="humidity-percent">75 %</div>
+              <div class="humidity-title">Humidity</div>
+            </div>
+          </div>
+          <div class="col-3">
+            <div class="additional-weather-data">
+              <div class="wind-speed">8 km/h</div>
+              <div class="wind-title">Wind</div>
+            </div>
+          </div>
+        </div>
+        <div class="forecast" id="forecast"></div>
+      </div>
+      <br />
+      <br />
+      <footer></footer>
+    </div>
+    <script src="index.js"></script>
+  </body>
+</html>
